@@ -71,5 +71,6 @@
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.5",
     "suitcss-utils": "^3.0.0"
-  }
+  },
+  "browserslist": "last 2 chrome major versions"
 }
