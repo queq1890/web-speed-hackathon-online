@@ -9,17 +9,6 @@
   text-align: center;
 }
 
-.NotFound__inner {
-  margin: 0 auto;
-  padding: calc(var(--space) * 4);
-}
-
-.NotFound__title {
-  margin: calc(var(--space) * 10) 0;
-  font-size: 40px;
-  font-family: serif;
-}
-
 .NotFound__text {
   margin: calc(var(--space) * 10) 0;
   font-size: 40px;
@@ -32,11 +21,6 @@
 }
 
 .NotFound__img-credit {
-  color: white;
-  font-size: var(--font-size-s);
-}
-
-.NotFound__img-author {
   color: white;
   font-size: var(--font-size-s);
 }

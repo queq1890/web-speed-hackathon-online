@@ -20,7 +20,7 @@ module.exports = {
 
     calc(),
 
-    cssnano(),
+    // cssnano(),
   ],
 
   map: { inline: false },
