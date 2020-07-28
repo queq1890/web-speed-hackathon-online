@@ -71,7 +71,7 @@ export function Entry() {
               />
             </header>
             <section>
-              <EntryView items={entry.items} />
+              <EntryView items={entry.items || []} />
             </section>
             <footer className="Entry__footer">
               <EntryFooter
