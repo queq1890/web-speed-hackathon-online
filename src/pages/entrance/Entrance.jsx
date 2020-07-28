@@ -37,7 +37,7 @@ export const chain = (input) => {
 
 export function Entrance() {
   const dispatch = useDispatch();
-  const blogList = useSelector((state) => state.blogList.toJS());
+  const blogList = useSelector((state) => state.blogList);
   const [pickups, setPickups] = useState([]);
   const [hasFetchFinished, setHasFetchFinished] = useState(false);
   const heroTextJaList = ['あみぶろ', '阿弥ぶろ', 'アミブロ'];

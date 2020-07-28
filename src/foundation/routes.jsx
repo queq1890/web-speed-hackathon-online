@@ -21,7 +21,7 @@ const NotFound = loadable(
 );
 
 export function Routes() {
-  const error = useSelector((state) => state.error.toJS());
+  const error = useSelector((state) => state.error);
 
   if (error.error !== undefined) {
     return <NotFound />;
