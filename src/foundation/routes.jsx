@@ -1,11 +1,24 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import loadable from '@loadable/component';
 
-import { Entrance } from '../pages/entrance';
-import { BlogHome } from '../pages/blog_home';
+const Entrance = loadable(() =>
+  import('../pages/entrance').then((module) => module.Entrance),
+);
+const BlogHome = loadable(() =>
+  import('../pages/blog_home').then((module) => module.BlogHome),
+);
+// TODO: Entry をlazy load できない原因を探す
+// const Entry = loadable(
+//   () => import('../pages/entry').then((module) => module.Entry),
+//   <div>loading</div>,
+// );
 import { Entry } from '../pages/entry';
-import { NotFound } from '../pages/not_found';
+const NotFound = loadable(
+  () => import('../pages/not_found').then((module) => module.NotFound),
+  <div>loading</div>,
+);
 
 export function Routes() {
   const error = useSelector((state) => state.error.toJS());
