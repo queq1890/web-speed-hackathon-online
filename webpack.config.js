@@ -16,6 +16,12 @@ module.exports = {
 
   resolve: {
     extensions: ['.js', '.jsx'],
+    // FIXME: remove alias for preact after finishing migration to preact
+    alias: {
+      "react": "preact/compat",
+      "react-dom/test-utils": "preact/test-utils",
+      "react-dom": "preact/compat",
+    }
   },
 
   plugins: [
