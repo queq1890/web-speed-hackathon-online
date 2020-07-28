@@ -1,4 +1,4 @@
-import timeout from 'race-timeout';
+import timeout from '../utils/timeout';
 import axiosMod from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
 
