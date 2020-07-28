@@ -1,5 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
+// FIXME: refactor code to remove lodash-es
+import _ from 'lodash-es';
 
 import { CommentListItem } from '../CommentListItem';
 
