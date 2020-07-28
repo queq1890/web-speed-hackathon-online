@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import Helmet from 'react-helmet';
 
 import { Main } from '../../foundation/components/Main';
 
@@ -43,21 +42,14 @@ export function Entry() {
     })();
   }, [dispatch, blogId, entryId]);
 
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
+  useEffect(() => {
+    hasFetchFinished && blog.nickname && entry.title
+      ? `${entry.title} - ${blog.nickname} - Amida Blog: あみぶろ`
+      : `Amida Blog: あみぶろ`;
+  }, [hasFetchFinished, blog.nickname, entry.title]);
 
   return (
     <>
-      <Helmet>
-        <title>
-          {entry.title} - {blog.nickname} - Amida Blog: あみぶろ
-        </title>
-      </Helmet>
       <div className="Entry">
         <BlogHeader blog={blog} />
 

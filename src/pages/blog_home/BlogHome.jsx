@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
 
@@ -35,19 +34,15 @@ export function BlogHome() {
     })();
   }, [dispatch, blogId]);
 
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
+  useEffect(() => {
+    document.title =
+      hasFetchFinished && blog.nickname
+        ? `${blog.nickname} - Amida Blog: あみぶろ`
+        : `Amida Blog: あみぶろ`;
+  }, [hasFetchFinished, blog.nickname]);
 
   return (
     <>
-      <Helmet>
-        <title>{blog.nickname} - Amida Blog: あみぶろ</title>
-      </Helmet>
       <div className="BlogHome">
         <BlogHeader blog={blog} />
 

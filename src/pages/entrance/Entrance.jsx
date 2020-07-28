@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
 
@@ -88,23 +87,16 @@ export function Entrance() {
     };
   }, []);
 
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
-
   if (pickups.length === 0 && blogList.length !== 0) {
     setPickups(chain(blogList).take(10).shuffle().take(4).value());
   }
 
+  useEffect(() => {
+    document.title = `Amida Blog: あみぶろ`;
+  }, []);
+
   return (
     <>
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
       <div className="Entrance">
         <section className="Entrance__hero">
           <div className="Entrance__hero-bg">
